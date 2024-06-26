@@ -207,8 +207,7 @@
         
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#data-sets">Data Sets</a></li>
-<li><a href="#software-setup">Software Setup</a></li>
+        <ul><li><a href="#working-environment">Working environment</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
         
@@ -291,32 +290,30 @@ any links that you are not going to use.
  -->
 
 
-      <section id="setup"><p>FIXME: Setup instructions live in this document. Please specify the
-tools and the data sets the Learner needs to have installed.</p>
-<section id="data-sets"><h2 class="section-heading">Data Sets<a class="anchor" aria-label="anchor" href="#data-sets"></a>
+      <section id="setup"><section id="working-environment"><h2 class="section-heading">Working environment<a class="anchor" aria-label="anchor" href="#working-environment"></a>
 </h2>
-<hr class="half-width"><!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
---><p>Download the <a href="https://example.com/FIXME" class="external-link">data zip file</a>
-and unzip it to your Desktop</p>
-</section><section id="software-setup"><h2 class="section-heading">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a>
-</h2>
-<hr class="half-width"><div id="details" class="callout discussion">
+<hr class="half-width"><div id="note" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div id="details" class="callout-inner">
-<h3 class="callout-title">Details<a class="anchor" aria-label="anchor" href="#details"></a>
+<div id="note" class="callout-inner">
+<h3 class="callout-title">Note<a class="anchor" aria-label="anchor" href="#note"></a>
 </h3>
 <div class="callout-content">
-<p>Setup for different systems can be presented in dropdown menus via a
-<code>spoiler</code> tag. They will join to this discussion block, so
-you can give a general overview of the software used in this lesson here
-and fill out the individual operating systems (and potentially add more,
-e.g. online setup) in the solutions blocks.</p>
-</div>
+<p>We expect participants to work in a Unix environment on their
+laptop.</p>
+<p>If you are unfamiliar with the Unix shell, you can work through the
+exercises in <a href="https://swcarpentry.github.io/shell-novice/" class="external-link">The
+Unix Shell</a> tutorial by Software Carpentry.</p>
+<p>Windows users: the Unix tutorial gives <code>git bash</code> as an
+option. However, for all work during the hands-on session:</p>
+<ul><li>do <strong>not</strong> use <code>git bash</code>
+</li>
+<li>do <strong>not</strong> use <code>Power shell</code> (apart from
+installing WSL2)</li>
+<li>activate WSL2 and <strong>use the Ubuntu terminal</strong> that
+comes with it!</li>
+</ul></div>
 </div>
 </div>
 <div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
@@ -327,9 +324,19 @@ e.g. online setup) in the solutions blocks.</p>
   Windows
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
-<p>Use PuTTY</p>
+<p>Activate <a href="https://learn.microsoft.com/en-us/windows/wsl/install#install-wsl-command" class="external-link">WSL2</a>
+and use the Ubuntu terminal.</p>
+<p>Note that if the Ubuntu terminal does not open properly, you might
+need to enable Virtualization in the BIOS menu.</p>
+<p>You might also need to set a parameter in Command prompt (run it as
+admin):</p>
+<pre><code>bcdedit /set {current} hypervisorlaunchtype auto</code></pre>
+<p>and restart the computer.</p>
+<p>Note that if you use virtual images e.g. VirtualBox on the same
+computer, you need to set that parameter to <code>off</code> and
+restart. So no WSL2 and VirtualBox in the same session.</p>
 </div>
 </div>
 </div>
@@ -342,7 +349,7 @@ e.g. online setup) in the solutions blocks.</p>
   MacOS
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Use Terminal.app</p>
 </div>
@@ -357,7 +364,7 @@ e.g. online setup) in the solutions blocks.</p>
   Linux
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>Use Terminal</p>
 </div>
