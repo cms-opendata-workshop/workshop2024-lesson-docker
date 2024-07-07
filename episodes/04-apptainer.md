@@ -18,7 +18,9 @@ exercises: 20
 
 ## Overview
 
-This is an optional section for people to try as an alternative to docker. This section will provide an overview of how to use apptainer images on a remote cluster. A pre-requisite to using these images is a pre-existing installation of apptainer. These directions are provided without any guarantees. The images have been verified to work. However, some tuning may need to be done with your specific configuration/permission to allow remote windows (e.g., a jupyter-lab browser or a ROOT TBrowser) to open. 
+This is an optional section for people to try as an alternative to docker. This section will provide an overview of how to use apptainer images on a remote cluster. A pre-requisite to using these images is a pre-existing installation of apptainer. The images have been verified to work. These directions are provided without any guarantees. However, some tuning may need to be done with your specific configuration/permission to allow remote windows (e.g., a jupyter-lab browser or a ROOT TBrowser) to open. 
+
+If you intend to use these images during the workshop, please make sure you download the images before the workshop. The images are between about 0.5 to 1 GB, and may take 30 minutes or more to download.
 
 
 ### Python tools container
@@ -130,6 +132,7 @@ you will get a welcome message, and a root prompt that looks like
 ```
 root [0]
 ```
+
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
