@@ -18,7 +18,7 @@ exercises: 20
 
 ## Overview
 
-This is an optional section for people to try as an alternative to docker. This section will provide an overview of how to use apptainer images on a remote cluster. A pre-requisite to using these images is a pre-existing installation of apptainer. These directions are provided without any guarantees. The images have been verified to work. However, some tuning may need to be done with your specific remote connecting configuration on your side to allow remotewindows (e.g., a jupyter-lab browser or a ROOT TBrowser) to open. 
+This is an optional section for people to try as an alternative to docker. This section will provide an overview of how to use apptainer images on a remote cluster. A pre-requisite to using these images is a pre-existing installation of apptainer. These directions are provided without any guarantees. The images have been verified to work. However, some tuning may need to be done with your specific configuration/permission to allow remote windows (e.g., a jupyter-lab browser or a ROOT TBrowser) to open. 
 
 
 ### Python tools container
@@ -105,4 +105,35 @@ to
 c.ServerApp.open_browser = True
 ```
 
+### ROOT tools container
 
+Download the ROOT image from the folder listed [here](https://cernbox.cern.ch/s/eOLXvywJ9EJUP3Q)
+
+Start the container with
+
+```
+apptainer shell root-vnc_latest.sif 
+```
+
+You will get a container prompt similar to this:
+
+```
+Singularity>
+```
+
+If you type:
+```
+root
+```
+you will get a welcome message, and a root prompt that looks like
+
+```
+root [0]
+```
+
+::::::::::::::::::::::::::::::::::::: keypoints 
+
+- You have now set up apptainer containers to work with CMS Open Data.
+- You know how to open a graphical window of ROOT or a jupyterlab in your browser using software installed in the container.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
