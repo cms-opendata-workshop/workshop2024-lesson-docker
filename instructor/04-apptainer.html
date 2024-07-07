@@ -338,7 +338,6 @@ data?</li>
 <h3 class="card-title">Objectives</h3>
 <ul><li>Download the ROOT and python images and build your own
 container</li>
-<li>LESSON WRITING IN PROGRESS</li>
 </ul></div>
 </div>
 </div>
@@ -346,11 +345,74 @@ container</li>
 </div>
 <section><h2 class="section-heading" id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 <a class="anchor" aria-label="anchor" href="#overview"></a></h2>
-<hr class="half-width"><p>This is an overview</p>
+<hr class="half-width"><p>This is an optional section for people to try as an alternative to
+docker. This section will provide an overview of how to use apptainer
+images on a remote cluster. A pre-requisite to using these images is a
+pre-existing installation of apptainer. These directions are provided
+without any guarantees. The images have been verified to work. However,
+some tuning may need to be done with your specific remote connecting
+configuration on your side to allow remotewindows (e.g., a jupyter-lab
+browser or a ROOT TBrowser) to open.</p>
+<div class="section level3">
+<h3 id="python-tools-container">Python tools container<a class="anchor" aria-label="anchor" href="#python-tools-container"></a></h3>
+<p>Download the python image from the folder listed <a href="https://cernbox.cern.ch/s/eOLXvywJ9EJUP3Q" class="external-link">here</a></p>
+<p>Start the container with</p>
+<pre><code>apptainer shell python-vnc_python3.10.5.sif</code></pre>
+<p>You will get a container prompt similar to this:</p>
+<pre><code>Singularity&gt;</code></pre>
+<p>This is a bash shell in the container.</p>
+<p>You can now open jupyter lab from the container prompt by typing</p>
+<pre><code>bash jupyter-lab --ip=0.0.0.0 --no-browser</code></pre>
+<p>The result should be a web link that you can enter into your browser
+to see your jupyter notebook.</p>
+<div id="link-does-not-work" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="link-does-not-work" class="callout-inner">
+<h3 class="callout-title">Link does not work?<a class="anchor" aria-label="anchor" href="#link-does-not-work"></a>
+</h3>
+<div class="callout-content">
+<p>Try replacing <code>127.0.0.1</code> in the link with
+<code>localhost</code>.</p>
+</div>
+</div>
+</div>
+<p>Click on the Jupyter notebook icon to open a new notebook.</p>
+<p>If this still doesn’t work, you may need to modify your ssh file.</p>
+<p>Check your config file here by</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">cat</span> ~/.ssh/config</span></code></pre>
+</div>
+<p>If you do not have the above file, create the above file. Once you
+have the file, add the following to it:</p>
+<pre><code>Host *
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null</code></pre>
+<p>You can replace * with the name of your cluster. For example, the
+your cluster address might be Computing.Univ.Edu. If you do not know
+what to do, you can put * and it will apply to any remote
+connection.</p>
+<p>When you log into your cluster, prepend the option -L.</p>
+<pre><code>ssh -L localhost:8888:localhost:8888 &lt;YOUR USERNAME&gt;@YOUR_CLUSTER_ADDRESS</code></pre>
+<p>Next go back to the directory where you downloaded the python image.
+Type the following:</p>
+<pre><code>jupyter-lab --no-browser --port=8888 --ip 127.0.0.1</code></pre>
+<p>Click on the Jupyter notebook icon to open a new notebook.</p>
+<p>If you still are having issues, check to see if you have a jupyter
+config file. To create one, do</p>
+<pre><code>jupyter notebook --generate-config</code></pre>
+<p>Change the line</p>
+<pre><code><span><span class="va">c.ServerApp.open_browser</span> <span class="op">=</span> <span class="va">False</span></span></code></pre>
+<p>to</p>
+<pre><code><span><span class="va">c.ServerApp.open_browser</span> <span class="op">=</span> <span class="va">True</span></span></code></pre>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/03-docker-for-cms-opendata.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
