@@ -18,7 +18,7 @@ exercises: 20
 
 ## Overview
 
-This is an optional section for people to try as an alternative to docker. This section will provide an overview of how to use apptainer images on a remote cluster. A pre-requisite to using these images is a pre-existing installation of apptainer. The images have been verified to work. These directions are provided without any guarantees. However, some tuning may need to be done with your specific configuration/permission to allow remote windows (e.g., a jupyter-lab browser or a ROOT TBrowser) to open. 
+This is an optional section for people to try as an alternative to docker. This section will provide an overview of how to use apptainer images on a remote cluster. A pre-requisite to using these images is a pre-existing installation of apptainer. The images have been verified to work. These directions are provided without any guarantees as some tuning on your own side may need to be done with your specific configuration/permission to allow remote windows (e.g., a jupyter-lab browser or a ROOT TBrowser) to open. 
 
 If you intend to use these images during the workshop, please make sure you download the images before the workshop. The images are between about 0.5 to 1 GB, and may take 30 minutes or more to download.
 
@@ -76,7 +76,7 @@ Host *
     UserKnownHostsFile /dev/null
 ```
 
-You can replace * with the name of your cluster. For example, the your cluster address might be Computing.Univ.Edu. If you do not know what to do, you can put * and it will apply to any remote connection.
+You can replace * with the name of your cluster. For example, your cluster address might be something like @Computing.Univ.Edu. If you do not know what to do, you can put * and it will apply to any remote connection.
 
 When you log into your cluster, prepend the option -L.
 
@@ -84,15 +84,24 @@ When you log into your cluster, prepend the option -L.
 ssh -L localhost:8888:localhost:8888 <YOUR USERNAME>@YOUR_CLUSTER_ADDRESS
 ```
 
-Next go back to the directory where you downloaded the python image. Type the following: 
+Next go back to the directory where you downloaded the python image and have opened the container. Type the following in the container: 
 
 ```
 jupyter-lab --no-browser --port=8888 --ip 127.0.0.1
 ```
 
-Click on the Jupyter notebook icon to open a new notebook. 
+The result should be a web link that you can enter into your browser to access your jupyter notebook. Click on the Jupyter notebook icon to open a new notebook. 
 
-If you still are having issues, check to see if you have a jupyter config file. To create one, do
+
+:::::::::::::::::::::::::::::: callout
+
+### Still no jupyter notebook?
+
+Check to see if you have a jupyter config file. 
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+To create one, type
 ```
 jupyter notebook --generate-config
 ```
