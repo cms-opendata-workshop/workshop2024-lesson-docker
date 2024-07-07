@@ -350,8 +350,8 @@ docker. This section will provide an overview of how to use apptainer
 images on a remote cluster. A pre-requisite to using these images is a
 pre-existing installation of apptainer. These directions are provided
 without any guarantees. The images have been verified to work. However,
-some tuning may need to be done with your specific remote connecting
-configuration on your side to allow remotewindows (e.g., a jupyter-lab
+some tuning may need to be done with your specific
+configuration/permission to allow remote windows (e.g., a jupyter-lab
 browser or a ROOT TBrowser) to open.</p>
 <div class="section level3">
 <h3 id="python-tools-container">Python tools container<a class="anchor" aria-label="anchor" href="#python-tools-container"></a></h3>
@@ -408,6 +408,33 @@ config file. To create one, do</p>
 <pre><code><span><span class="va">c.ServerApp.open_browser</span> <span class="op">=</span> <span class="va">False</span></span></code></pre>
 <p>to</p>
 <pre><code><span><span class="va">c.ServerApp.open_browser</span> <span class="op">=</span> <span class="va">True</span></span></code></pre>
+</div>
+<div class="section level3">
+<h3 id="root-tools-container">ROOT tools container<a class="anchor" aria-label="anchor" href="#root-tools-container"></a></h3>
+<p>Download the ROOT image from the folder listed <a href="https://cernbox.cern.ch/s/eOLXvywJ9EJUP3Q" class="external-link">here</a></p>
+<p>Start the container with</p>
+<pre><code>apptainer shell root-vnc_latest.sif </code></pre>
+<p>You will get a container prompt similar to this:</p>
+<pre><code>Singularity&gt;</code></pre>
+<p>If you type:</p>
+<pre><code><span><span class="va">root</span></span></code></pre>
+<p>you will get a welcome message, and a root prompt that looks like</p>
+<pre><code><span><span class="va">root</span> <span class="op">[</span><span class="fl">0</span><span class="op">]</span></span></code></pre>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul><li>You have now set up apptainer containers to work with CMS Open
+Data.</li>
+<li>You know how to open a graphical window of ROOT or a jupyterlab in
+your browser using software installed in the container.</li>
+</ul></div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
