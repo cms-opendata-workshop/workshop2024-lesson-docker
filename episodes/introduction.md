@@ -51,6 +51,7 @@ If you're working on a remote cluster and are having trouble with docker, one al
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Docker is a set of products to deliver and run software in packages called containers.
