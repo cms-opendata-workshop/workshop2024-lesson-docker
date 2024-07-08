@@ -43,7 +43,13 @@ why we run Docker in the way we do so that you gain some understanding. More spe
 be showing you how to set up Docker for not just this workshop, but for interfacing with the 
 CMS open data in general
 
+## Are there any alternatives?
 
+::::::::::::::::::::::::::::::::::::: apptainer
+
+If you're working on a remote cluster and are having trouble with docker, one alternative you may want to try out is an apptainer container. More info. is in [Episode 4: Apptainer for CMS open data](https://cms-opendata-workshop.github.io/workshop2024-lesson-docker/04-apptainer.html).
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
