@@ -24,7 +24,7 @@ exercises: 20
 ### pre-requisites
 
 - Apptainer installed on your remote cluster
-- A copy of the container images: Downlowd the sif from [here](https://cernbox.cern.ch/s/eOLXvywJ9EJUP3Q)
+- A copy of the ROOT and Python container images: Downlowd the .sif files from [here](https://cernbox.cern.ch/s/eOLXvywJ9EJUP3Q)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -36,52 +36,43 @@ This is an optional section for you to try out as an alternative to docker. This
 If you intend to use these images during the workshop, please make sure you download the images before the workshop. The images are between about 0.5 to 1 GB, and may take 30 minutes or more to download.
 
 
-### Python tools container
+## Python tools container
 
-After you have the pre-requisite .sif images downloaded to your system 
+After you have the pre-requisite .sif images downloaded to your system, copy them onto the remote cluster that you will use to analyze Open Data, perhaps using `scp`.
 
-Start the container with
+Start the Python container with:
 
-```
+```bash
 apptainer shell python-vnc_python3.10.5.sif
 ```
 
 You will get a container prompt similar to this:
 
-```
+```output
 Singularity>
 ```
 
-This is a bash shell in the container.
+This is a bash shell in the container. You can now open jupyter lab from the container prompt by typing
 
-You can now open jupyter lab from the container prompt by typing
-
-```
-bash jupyter-lab --ip=0.0.0.0 --no-browser
+```bash
+Singularity> jupyter-lab --ip=0.0.0.0 --no-browser
 ```
 
-The result should be a web link that you can enter into your browser to see your jupyter notebook.
+The result should be a web link that you can enter into your browser to see your jupyter notebook. Click on the Jupyter notebook icon to open a new notebook.
 
 :::::::::::::::::::::::::::::: callout
 
 ### Link does not work?
 
-Try replacing `127.0.0.1` in the link with `localhost`.
+Try replacing `127.0.0.1` in the link with `localhost`. 
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-Click on the Jupyter notebook icon to open a new notebook. 
-
-If this still doesn't work, you may need to modify your ssh file.
-
-Check your config file here by 
+If that change doesn't work, you may need to modify your ssh file and remote cluster login command. Check the ssh config file on your local computer (not the remote cluster):
 
 ```bash
 cat ~/.ssh/config
 ```
 
-If you do not have the above file, create the above file. 
-Once you have the file, add the following to it:
+Add the following lines to your config file (you can create the file if it does not exist):
 
 ```
 Host *
@@ -90,35 +81,28 @@ Host *
 ```
 
 You can replace * with the name of your cluster. For example, your cluster address might be something like @Computing.Univ.Edu. If you do not know what to do, you can put * and it will apply to any remote connection.
+When you log into your cluster, prepend the option -L and provide ports for displays:
 
-When you log into your cluster, prepend the option -L.
-
-```
+```bash
 ssh -L localhost:8888:localhost:8888 <YOUR USERNAME>@YOUR_CLUSTER_ADDRESS
 ```
 
 Next go back to the directory where you downloaded the python image and have opened the container. Type the following in the container: 
 
-```
-jupyter-lab --no-browser --port=8888 --ip 127.0.0.1
+```bash
+Singularity> jupyter-lab --no-browser --port=8888 --ip 127.0.0.1
 ```
 
 The result should be a web link that you can enter into your browser to access your jupyter notebook. Click on the Jupyter notebook icon to open a new notebook. 
 
+## Still no jupyter notebook?
 
-:::::::::::::::::::::::::::::: callout
+Check to see if you have a jupyter config file. To create one, log in to the remote cluster and enter the apptainer shell. Then execute:
 
-### Still no jupyter notebook?
-
-Check to see if you have a jupyter config file. 
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-To create one, type
+```bash
+Singularity> jupyter notebook --generate-config
 ```
-jupyter notebook --generate-config
-```
-Change the line 
+Change the line:
 
 ```
 c.ServerApp.open_browser = False
@@ -129,30 +113,34 @@ to
 c.ServerApp.open_browser = True
 ```
 
+Then try again to open the juypter notebook from the jupyter lab webpage.
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 ### ROOT tools container
 
-Download the ROOT image from the folder listed [here](https://cernbox.cern.ch/s/eOLXvywJ9EJUP3Q)
+Download the ROOT image from the folder listed [here](https://cernbox.cern.ch/s/eOLXvywJ9EJUP3Q) and copy it onto your remote cluster.
 
-Start the container with
+Start the container with:
 
-```
+```bash
 apptainer shell root-vnc_latest.sif 
 ```
 
 You will get a container prompt similar to this:
 
-```
+```output
 Singularity>
 ```
 
 If you type:
 ```
-root
+Singularity> root
 ```
 you will get a welcome message, and a root prompt that looks like
 
 ```
-root [0]
+Singularity> root [0]
 ```
 
 
