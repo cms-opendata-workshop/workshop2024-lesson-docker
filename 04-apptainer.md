@@ -101,7 +101,7 @@ Check to see if you have a jupyter config file. To create one, log in to the rem
 ```bash
 Singularity> jupyter-lab --generate-config
 ```
-It will print out the path to a jupyter_lab_config.py file, which may be in your home directory outside the shell in .jupyter/jupyter_lab_config.py. Change the line:
+It will print out the path to a `jupyter_lab_config.py` file, which may be in your home directory outside the apptainer shell in `.jupyter/jupyter_lab_config.py`. Change the line:
 
 ```
 c.ServerApp.open_browser = False
@@ -141,6 +141,23 @@ you will get a welcome message, and a root prompt that looks like
 ```bash
 Singularity> root [0]
 ```
+## Exercises
+
+:::::::::::::::::::::::::: challenge
+
+## Homework: confirm your containers work
+
+Please visit the [assignment form](https://docs.google.com/forms/d/e/1FAIpQLSdxsc-aIWqUyFA0qTsnbfQrA6wROtAxC5Id4sxH08STTl8e5w/viewform) and answer a few questions about your container. You need to sign in and <strong style="color: red;">click on the submit button</strong> in order to save your work.  You can go back to edit the form at any time.
+
+::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::: challenge
+
+## Challenges from the previous episode
+
+If you skipped the previous episode because you are working on a remote cluster, [go back one page](03-docker-for-cms-opendata.md#exercises) and try the exercises using apptainer. The main goal of these exercises is to make sure you are able to execute important commands inside the containers and access stored files. If you need help, contact us in Mattermost.
+
+::::::::::::::::::::::::::::
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
