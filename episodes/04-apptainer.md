@@ -19,7 +19,7 @@ exercises: 20
 
 ## Prerequisites
 
-::::::::::::::::::::::::::::::::::::: callout
+::::::::::::::::::::::::::::::::::::: pre-requisites on your cluster
 
 - Apptainer installed on your remote cluster
 - A copy of the container images: Downlowd the sif from [here](https://cernbox.cern.ch/s/eOLXvywJ9EJUP3Q)
@@ -27,7 +27,7 @@ exercises: 20
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Overview
+## Introduction
 
 This is an optional section for people to try as an alternative to docker. This section will provide an overview of how to use apptainer images on a remote cluster. A pre-requisite to using these images is a pre-existing installation of apptainer. The images have been verified to work. These directions are provided without any guarantees as some tuning on your own side may need to be done with your specific configuration/permission to allow remote windows (e.g., a jupyter-lab browser or a ROOT TBrowser) to open. 
 
