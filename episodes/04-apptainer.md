@@ -19,7 +19,7 @@ exercises: 20
 
 ## Prerequisites
 
-::::::::::::::::::::::::::::::::::::: pre-requisites on your cluster
+::::::::::::::::::::::::::::::::::::: callout
 
 - Apptainer installed on your remote cluster
 - A copy of the container images: Downlowd the sif from [here](https://cernbox.cern.ch/s/eOLXvywJ9EJUP3Q)
