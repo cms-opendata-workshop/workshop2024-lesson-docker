@@ -12,7 +12,7 @@ exercises: 20
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Download the ROOT and python images and build your own container
+- Download the ROOT and python images and launch the containers on a remote cluster
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -117,7 +117,7 @@ Then try again to open the juypter notebook from the jupyter lab webpage.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### ROOT tools container
+## ROOT tools container
 
 Download the ROOT image from the folder listed [here](https://cernbox.cern.ch/s/eOLXvywJ9EJUP3Q) and copy it onto your remote cluster.
 
