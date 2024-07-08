@@ -99,9 +99,9 @@ The result should be a web link that you can enter into your browser to access y
 Check to see if you have a jupyter config file. To create one, log in to the remote cluster and enter the apptainer shell. Then execute:
 
 ```bash
-Singularity> jupyter notebook --generate-config
+Singularity> jupyter-lab --generate-config
 ```
-Change the line:
+It will print out the path to a jupyter_lab_config.py file, which may be in your home directory outside the shell in .jupyter/jupyter_lab_config.py. Change the line:
 
 ```
 c.ServerApp.open_browser = False
