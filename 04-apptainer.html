@@ -456,9 +456,11 @@ to the remote cluster and enter the apptainer shell. Then execute:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">Singularity</span><span class="op">&gt;</span> jupyter notebook <span class="at">--generate-config</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">Singularity</span><span class="op">&gt;</span> jupyter-lab <span class="at">--generate-config</span></span></code></pre>
 </div>
-<p>Change the line:</p>
+<p>It will print out the path to a jupyter_lab_config.py file, which may
+be in your home directory outside the shell in
+.jupyter/jupyter_lab_config.py. Change the line:</p>
 <pre><code><span><span class="va">c.ServerApp.open_browser</span> <span class="op">=</span> <span class="va">False</span></span></code></pre>
 <p>to</p>
 <pre><code><span><span class="va">c.ServerApp.open_browser</span> <span class="op">=</span> <span class="va">True</span></span></code></pre>
