@@ -1332,14 +1332,20 @@ files from <a href="https://cernbox.cern.ch/s/eOLXvywJ9EJUP3Q" class="external-l
 </h2>
 <hr class="half-width">
 <p>This is an optional section for you to try out as an alternative to
-docker. This section will provide an overview of how to use apptainer
-images on a remote cluster. Although the images have been verified to
-work, additional work may need to be done on your side to tune your
-specific configurations/permissions to allow remote windows (e.g., a
-jupyter-lab browser or a ROOT TBrowser) to open.</p>
-<p>If you intend to use these images during the workshop, please make
-sure you download the images before the workshop. The images are between
-about 0.5 to 1 GB, and may take 30 minutes or more to download.</p>
+docker. This section will provide an overview of how to use
+<code>apptainer</code> images on a remote cluster. Apptainer is a
+package that many clusters install to manage containerized software,
+particularly if a batch job system is connected to the cluster. If your
+cluster has Apptainer available, you can use our Open Data toolkits
+without requesting additional software installation on the cluster
+itself.</p>
+<p>Although the images have been verified to work, additional work may
+need to be done on your side to tune your specific
+configurations/permissions to allow remote windows (e.g., a jupyter-lab
+browser or a ROOT TBrowser) to open. If you intend to use these images
+during the workshop, please make sure you download the images before the
+workshop. The images are between about 0.5 to 1 GB, and may take 30
+minutes or more to download.</p>
 </section><section><h2 class="section-heading" id="python-tools-container">Python tools container<a class="anchor" aria-label="anchor" href="#python-tools-container"></a>
 <a class="anchor" aria-label="anchor" href="#python-tools-container"></a>
 </h2>
@@ -1412,9 +1418,9 @@ and have opened the container. Type the following in the container:</p>
 <p>The result should be a web link that you can enter into your browser
 to access your jupyter notebook. Click on the Jupyter notebook icon to
 open a new notebook.</p>
-<div class="section level2">
-<h2 id="still-no-jupyter-notebook">Still no jupyter notebook?<a class="anchor" aria-label="anchor" href="#still-no-jupyter-notebook"></a>
-</h2>
+<div class="section level3">
+<h3 id="still-no-jupyter-notebook">Still no jupyter notebook?<a class="anchor" aria-label="anchor" href="#still-no-jupyter-notebook"></a>
+</h3>
 <p>Check to see if you have a jupyter config file. To create one, log in
 to the remote cluster and enter the apptainer shell. Then execute:</p>
 <div class="codewrapper sourceCode" id="cb8">
@@ -1451,9 +1457,17 @@ onto your remote cluster.</p>
 <pre class="output" tabindex="0"><code>Singularity&gt;</code></pre>
 </div>
 <p>If you type:</p>
-<pre><code><span><span class="va">Singularity</span><span class="op">&gt;</span> <span class="va">root</span></span></code></pre>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">Singularity</span><span class="op">&gt;</span> root</span></code></pre>
+</div>
 <p>you will get a welcome message, and a root prompt that looks like</p>
-<pre><code><span><span class="va">Singularity</span><span class="op">&gt;</span> <span class="va">root</span> <span class="op">[</span><span class="fl">0</span><span class="op">]</span></span></code></pre>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">Singularity</span><span class="op">&gt;</span> root <span class="pp">[</span><span class="ss">0</span><span class="pp">]</span></span></code></pre>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
