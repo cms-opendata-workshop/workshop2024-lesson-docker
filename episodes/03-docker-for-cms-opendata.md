@@ -219,6 +219,14 @@ exit
 
 ## Exercises
 
+:::::::::::::::::::::::::: challenge
+
+## Homework: confirm your containers work
+
+Please visit the [assignment form](https://docs.google.com/forms/d/e/1FAIpQLSdxsc-aIWqUyFA0qTsnbfQrA6wROtAxC5Id4sxH08STTl8e5w/viewform) and answer a few questions about your container. You need to sign in and <strong style="color: red;">click on the submit button</strong> in order to save your work.  You can go back to edit the form at any time.
+
+::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ### Challenge 1
