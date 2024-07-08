@@ -31,10 +31,9 @@ exercises: 20
 
 ## Introduction
 
-This is an optional section for you to try out as an alternative to docker. This section will provide an overview of how to use apptainer images on a remote cluster. Although the images have been verified to work, additional work may need to be done on your side to tune your specific configurations/permissions to allow remote windows (e.g., a jupyter-lab browser or a ROOT TBrowser) to open. 
+This is an optional section for you to try out as an alternative to docker. This section will provide an overview of how to use `apptainer` images on a remote cluster. Apptainer is a package that many clusters install to manage containerized software, particularly if a batch job system is connected to the cluster. If your cluster has Apptainer available, you can use our Open Data toolkits without requesting additional software installation on the cluster itself. 
 
-If you intend to use these images during the workshop, please make sure you download the images before the workshop. The images are between about 0.5 to 1 GB, and may take 30 minutes or more to download.
-
+Although the images have been verified to work, additional work may need to be done on your side to tune your specific configurations/permissions to allow remote windows (e.g., a jupyter-lab browser or a ROOT TBrowser) to open. If you intend to use these images during the workshop, please make sure you download the images before the workshop. The images are between about 0.5 to 1 GB, and may take 30 minutes or more to download.
 
 ## Python tools container
 
@@ -95,7 +94,7 @@ Singularity> jupyter-lab --no-browser --port=8888 --ip 127.0.0.1
 
 The result should be a web link that you can enter into your browser to access your jupyter notebook. Click on the Jupyter notebook icon to open a new notebook. 
 
-## Still no jupyter notebook?
+### Still no jupyter notebook?
 
 Check to see if you have a jupyter config file. To create one, log in to the remote cluster and enter the apptainer shell. Then execute:
 
@@ -134,12 +133,12 @@ Singularity>
 ```
 
 If you type:
-```
+```bash
 Singularity> root
 ```
 you will get a welcome message, and a root prompt that looks like
 
-```
+```bash
 Singularity> root [0]
 ```
 
