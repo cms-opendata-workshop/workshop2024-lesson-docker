@@ -774,7 +774,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-03-docker-for-cms-opendata"><p>Content from <a href="03-docker-for-cms-opendata.html">Docker containers for CMS open data</a></p>
 <hr>
-<p>Last updated on 2024-07-08 |
+<p>Last updated on 2024-07-09 |
 
         <a href="https://github.com/cms-opendata-workshop/workbench-template-md/edit/main/episodes/03-docker-for-cms-opendata.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 35 minutes</p>
@@ -1037,8 +1037,8 @@ started VNC, stop it first:</p>
 </div>
 <p>Open a ROOT Object Browser by typing</p>
 <pre><code>TBrowser t</code></pre>
-<p>in the ROOT prompt.</p>
-<p>You should see the ROOT Object Broswer opening.</p>
+<p>in the ROOT prompt. You should see the ROOT Object Broswer
+opening.</p>
 <p>Exit ROOT with</p>
 <pre><code><span><span class="va">.q</span></span></code></pre>
 <p>in the ROOT prompt.</p>
@@ -1047,6 +1047,26 @@ started VNC, stop it first:</p>
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="bu">exit</span></span></code></pre>
+</div>
+<div id="if-the-x11-forwarding-does-not-work" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="if-the-x11-forwarding-does-not-work" class="callout-inner">
+<h3 class="callout-title">If the X11 forwarding does not work<a class="anchor" aria-label="anchor" href="#if-the-x11-forwarding-does-not-work"></a>
+</h3>
+<div class="callout-content">
+<p>Try typing the following before restarting your docker container:</p>
+<div class="codewrapper sourceCode" id="cb20">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">xhost</span> local:root</span></code></pre>
+</div>
+<p>If you still encounter issues with the X11 forwarding, please delete
+your container and follow the instructions above for “Linux without X11
+forwarding” and use the VNC web viewer for graphics.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1099,24 +1119,24 @@ in <code>cms_open_data_python</code> or in
 <code>cms_open_data_root</code>.</p>
 <p>Restart the container, making sure to choose the container that is
 connected to shared working area that you have chosen:</p>
-<div class="codewrapper sourceCode" id="cb20">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ex">docker</span> start <span class="at">-i</span> my_python</span></code></pre>
-</div>
-<p>or</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">docker</span> start <span class="at">-i</span> my_root</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">docker</span> start <span class="at">-i</span> my_python</span></code></pre>
 </div>
-<p>In the container prompt, list the files and show the contents of the
-newly created file:</p>
+<p>or</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">ls</span></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="fu">cat</span> example.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="ex">docker</span> start <span class="at">-i</span> my_root</span></code></pre>
+</div>
+<p>In the container prompt, list the files and show the contents of the
+newly created file:</p>
+<div class="codewrapper sourceCode" id="cb23">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">ls</span></span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="fu">cat</span> example.txt</span></code></pre>
 </div>
 </div>
 </div>
@@ -1143,48 +1163,48 @@ sure that you get it to your host</p>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Restart the python container with</p>
-<div class="codewrapper sourceCode" id="cb23">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">docker</span> start <span class="at">-i</span> my_python</span></code></pre>
-</div>
-<p>Start the jypyter lab with</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="ex">jupyter-lab</span> <span class="at">--ip</span><span class="op">=</span>0.0.0.0 <span class="at">--no-browser</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="ex">docker</span> start <span class="at">-i</span> my_python</span></code></pre>
+</div>
+<p>Start the jypyter lab with</p>
+<div class="codewrapper sourceCode" id="cb25">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">jupyter-lab</span> <span class="at">--ip</span><span class="op">=</span>0.0.0.0 <span class="at">--no-browser</span></span></code></pre>
 </div>
 <p>Open a new jupyter notebook.</p>
 <p>Make a plot of your choice. For a quick CMS open data plot, you can
 use the following:</p>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="im">import</span> uproot</span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pylab <span class="im">as</span> plt</span>
-<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="im">import</span> awkward <span class="im">as</span> ak</span>
-<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a></span>
-<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a><span class="co"># open a CMS open data file, we'll see later how to find them</span></span>
-<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> uproot.<span class="bu">open</span>(<span class="st">"root://eospublic.cern.ch//eos/opendata/cms/Run2016H/SingleMuon/NANOAOD/UL2016_MiniAODv2_NanoAODv9-v1/120000/61FC1E38-F75C-6B44-AD19-A9894155874E.root"</span>)</span>
-<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a><span class="bu">file</span>.classnames() <span class="co"># this is just to see the top-level content</span></span>
-<span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a>events <span class="op">=</span> <span class="bu">file</span>[<span class="st">'Events'</span>]</span>
-<span id="cb25-10"><a href="#cb25-10" tabindex="-1"></a><span class="co"># take all muon pt values in an array, we'll see later how to find the variable names</span></span>
-<span id="cb25-11"><a href="#cb25-11" tabindex="-1"></a>pt <span class="op">=</span> events[<span class="st">'Muon_pt'</span>].array() </span>
-<span id="cb25-12"><a href="#cb25-12" tabindex="-1"></a>plt.figure()</span>
-<span id="cb25-13"><a href="#cb25-13" tabindex="-1"></a>plt.hist(ak.flatten(pt),bins<span class="op">=</span><span class="dv">200</span>,<span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">200</span>))</span>
-<span id="cb25-14"><a href="#cb25-14" tabindex="-1"></a>plt.show()</span>
-<span id="cb25-15"><a href="#cb25-15" tabindex="-1"></a>plt.savefig(<span class="st">"pt.png"</span>) </span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="im">import</span> uproot</span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pylab <span class="im">as</span> plt</span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a><span class="im">import</span> awkward <span class="im">as</span> ak</span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a><span class="co"># open a CMS open data file, we'll see later how to find them</span></span>
+<span id="cb26-7"><a href="#cb26-7" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> uproot.<span class="bu">open</span>(<span class="st">"root://eospublic.cern.ch//eos/opendata/cms/Run2016H/SingleMuon/NANOAOD/UL2016_MiniAODv2_NanoAODv9-v1/120000/61FC1E38-F75C-6B44-AD19-A9894155874E.root"</span>)</span>
+<span id="cb26-8"><a href="#cb26-8" tabindex="-1"></a><span class="bu">file</span>.classnames() <span class="co"># this is just to see the top-level content</span></span>
+<span id="cb26-9"><a href="#cb26-9" tabindex="-1"></a>events <span class="op">=</span> <span class="bu">file</span>[<span class="st">'Events'</span>]</span>
+<span id="cb26-10"><a href="#cb26-10" tabindex="-1"></a><span class="co"># take all muon pt values in an array, we'll see later how to find the variable names</span></span>
+<span id="cb26-11"><a href="#cb26-11" tabindex="-1"></a>pt <span class="op">=</span> events[<span class="st">'Muon_pt'</span>].array() </span>
+<span id="cb26-12"><a href="#cb26-12" tabindex="-1"></a>plt.figure()</span>
+<span id="cb26-13"><a href="#cb26-13" tabindex="-1"></a>plt.hist(ak.flatten(pt),bins<span class="op">=</span><span class="dv">200</span>,<span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">200</span>))</span>
+<span id="cb26-14"><a href="#cb26-14" tabindex="-1"></a>plt.show()</span>
+<span id="cb26-15"><a href="#cb26-15" tabindex="-1"></a>plt.savefig(<span class="st">"pt.png"</span>) </span></code></pre>
 </div>
 <p>Run the code shell, and you should see the muon pt plot.</p>
 <p>You can rename your notebook by right-clicking on the name in the
 left bar and choosing “Rename”.</p>
 <p>In a shell on your host system, move to the working directory, list
 the files and you should see the notebook and the plot file.</p>
-<div class="codewrapper sourceCode" id="cb26">
+<div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">ls</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">ls</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1216,26 +1236,26 @@ it to your host</p>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Restart the root container with</p>
-<div class="codewrapper sourceCode" id="cb28">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="ex">docker</span> start <span class="at">-i</span> my_root</span></code></pre>
-</div>
-<p>If you are using VNC, start it in the container prompt with</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">start_vnc</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">docker</span> start <span class="at">-i</span> my_root</span></code></pre>
+</div>
+<p>If you are using VNC, start it in the container prompt with</p>
+<div class="codewrapper sourceCode" id="cb30">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">start_vnc</span></span></code></pre>
 </div>
 <p>Open the URL in your browser and connect with the password
 <code>cms.cern</code>.</p>
 <p>Start ROOT and make a plot of your choice.</p>
 <p>For a quick CMS open data plot, you can open a CMS open data file
 with ROOT with</p>
-<div class="codewrapper sourceCode" id="cb30">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a> <span class="ex">root</span> root://eospublic.cern.ch//eos/opendata/cms/Run2016H/SingleMuon/NANOAOD/UL2016_MiniAODv2_NanoAODv9-v1/120000/61FC1E38-F75C-6B44-AD19-A9894155874E.root</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a> <span class="ex">root</span> root://eospublic.cern.ch//eos/opendata/cms/Run2016H/SingleMuon/NANOAOD/UL2016_MiniAODv2_NanoAODv9-v1/120000/61FC1E38-F75C-6B44-AD19-A9894155874E.root</span></code></pre>
 </div>
 <p>In the ROOT prompt, type</p>
 <pre><code>TBrowser t</code></pre>
@@ -1249,10 +1269,10 @@ and you will see a menu named <code>TCanvas::Canvas_1</code>. Choose
 “Quit Root” from the ROOT Object Browser menu options.</p>
 <p>In a terminal on your host system, move to the working directory,
 list the files and you should see the plot file.</p>
-<div class="codewrapper sourceCode" id="cb32">
+<div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="fu">ls</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="fu">ls</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
