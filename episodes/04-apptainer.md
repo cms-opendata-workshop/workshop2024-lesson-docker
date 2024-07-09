@@ -141,6 +141,15 @@ you will get a welcome message, and a root prompt that looks like
 ```bash
 Singularity> root [0]
 ```
+
+Unlike the docker container, `start_vnc` should not be necessary to view plots from ROOT. Test this by opening a ROOT browser:
+
+```bash
+Singularity> root [0] TBrowser t
+```
+
+If you do see the browser GUI appear, reach out on the [apptainer help](https://mattermost.web.cern.ch/cmsodws2024/channels/apptainer-help) mattermost channel. 
+
 ## Exercises
 
 :::::::::::::::::::::::::: challenge
@@ -155,7 +164,7 @@ Please visit the [assignment form](https://docs.google.com/forms/d/e/1FAIpQLSdxs
 
 ## Challenges from the previous episode
 
-If you skipped the previous episode because you are working on a remote cluster, [go back one page](03-docker-for-cms-opendata.md#exercises) and try the exercises using apptainer. The main goal of these exercises is to make sure you are able to execute important commands inside the containers and access stored files. If you need help, contact us in Mattermost.
+If you skipped the previous episode because you are working on a remote cluster, [go back one page](03-docker-for-cms-opendata.md#exercises) and try the exercises using apptainer. The main goal of these exercises is to make sure you are able to execute important commands inside the containers and access stored files. Recall that for the ROOT exercise, `start_vnc` and `stop_vnc` should not be necessary. If you need help, contact us in [Mattermost](https://mattermost.web.cern.ch/cmsodws2024/channels/apptainer-help).
 
 ::::::::::::::::::::::::::::
 
