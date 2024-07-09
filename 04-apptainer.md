@@ -149,6 +149,12 @@ Singularity> root [0] TBrowser t
 ```
 
 If you do see the browser GUI appear, reach out on the [apptainer help](https://mattermost.web.cern.ch/cmsodws2024/channels/apptainer-help) mattermost channel. 
+You can exit ROOT and the container by entering:
+
+```bash
+Singularity> root [1] .q
+Singularity> exit
+```
 
 ## Exercises
 
