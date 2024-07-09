@@ -197,9 +197,7 @@ Open a ROOT Object Browser by typing
 TBrowser t
 ```
 
-in the ROOT prompt.
-
-You should see the ROOT Object Broswer opening.
+in the ROOT prompt. You should see the ROOT Object Broswer opening.
 
 Exit ROOT with
 
@@ -214,6 +212,19 @@ Type `exit` to leave the container:
 ```bash
 exit
 ```
+:::::::::::::: callout
+
+## If the X11 forwarding does not work
+
+Try typing the following before restarting your docker container:
+
+```bash
+xhost local:root
+```
+
+If you still encounter issues with the X11 forwarding, please delete your container and follow the instructions above for "Linux without X11 forwarding" and use the VNC web viewer for graphics.
+
+::::::::::::::
 
 ::::::::::::::::::::
 
