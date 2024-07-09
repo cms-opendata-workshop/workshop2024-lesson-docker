@@ -310,7 +310,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Apptainer for CMS open data</h1>
-        <p>Last updated on 2024-07-08 |
+        <p>Last updated on 2024-07-09 |
 
         <a href="https://github.com/cms-opendata-workshop/workbench-template-md/edit/main/episodes/04-apptainer.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -500,6 +500,16 @@ onto your remote cluster.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">Singularity</span><span class="op">&gt;</span> root <span class="pp">[</span><span class="ss">0</span><span class="pp">]</span></span></code></pre>
 </div>
+<p>Unlike the docker container, <code>start_vnc</code> should not be
+necessary to view plots from ROOT. Test this by opening a ROOT
+browser:</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">Singularity</span><span class="op">&gt;</span> root <span class="pp">[</span><span class="ss">0</span><span class="pp">]</span> TBrowser t</span></code></pre>
+</div>
+<p>If you do see the browser GUI appear, reach out on the <a href="https://mattermost.web.cern.ch/cmsodws2024/channels/apptainer-help" class="external-link">apptainer
+help</a> mattermost channel.</p>
 </section><section><h2 class="section-heading" id="exercises">Exercises<a class="anchor" aria-label="anchor" href="#exercises"></a>
 <a class="anchor" aria-label="anchor" href="#exercises"></a></h2>
 <hr class="half-width"><div id="homework-confirm-your-containers-work" class="callout discussion">
@@ -530,8 +540,9 @@ form at any time.</p>
 remote cluster, <a href="03-docker-for-cms-opendata.html#exercises">go
 back one page</a> and try the exercises using apptainer. The main goal
 of these exercises is to make sure you are able to execute important
-commands inside the containers and access stored files. If you need
-help, contact us in Mattermost.</p>
+commands inside the containers and access stored files. Recall that for
+the ROOT exercise, <code>start_vnc</code> and <code>stop_vnc</code>
+should not be necessary. If you need help, contact us in <a href="https://mattermost.web.cern.ch/cmsodws2024/channels/apptainer-help" class="external-link">Mattermost</a>.</p>
 </div>
 </div>
 </div>
@@ -612,7 +623,7 @@ any links that you are not going to use.
   "url": "https://cms-opendata-workshop.github.io/workbench-template-md/instructor/04-apptainer.html",
   "identifier": "https://cms-opendata-workshop.github.io/workbench-template-md/instructor/04-apptainer.html",
   "dateCreated": "2024-07-08",
-  "dateModified": "2024-07-08",
+  "dateModified": "2024-07-09",
   "datePublished": "2024-07-09"
 }
 

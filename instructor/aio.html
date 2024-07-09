@@ -966,7 +966,7 @@ start</a>.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Windows WSL, Mac and Linux without X11-forwarding </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1015,7 +1015,7 @@ started VNC, stop it first:</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Linux using X11-forwarding </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1091,7 +1091,7 @@ the container.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Open the editor in your host system, create a file
 <code>example.txt</code> and save it to the shared working area, either
@@ -1140,7 +1140,7 @@ sure that you get it to your host</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Restart the python container with</p>
 <div class="codewrapper sourceCode" id="cb23">
@@ -1213,7 +1213,7 @@ it to your host</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Restart the root container with</p>
 <div class="codewrapper sourceCode" id="cb28">
@@ -1288,7 +1288,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-04-apptainer"><p>Content from <a href="04-apptainer.html">Apptainer for CMS open data</a></p>
 <hr>
-<p>Last updated on 2024-07-08 |
+<p>Last updated on 2024-07-09 |
 
         <a href="https://github.com/cms-opendata-workshop/workbench-template-md/edit/main/episodes/04-apptainer.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 35 minutes</p>
@@ -1486,6 +1486,16 @@ onto your remote cluster.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">Singularity</span><span class="op">&gt;</span> root <span class="pp">[</span><span class="ss">0</span><span class="pp">]</span></span></code></pre>
 </div>
+<p>Unlike the docker container, <code>start_vnc</code> should not be
+necessary to view plots from ROOT. Test this by opening a ROOT
+browser:</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">Singularity</span><span class="op">&gt;</span> root <span class="pp">[</span><span class="ss">0</span><span class="pp">]</span> TBrowser t</span></code></pre>
+</div>
+<p>If you do see the browser GUI appear, reach out on the <a href="https://mattermost.web.cern.ch/cmsodws2024/channels/apptainer-help" class="external-link">apptainer
+help</a> mattermost channel.</p>
 </section><section><h2 class="section-heading" id="exercises">Exercises<a class="anchor" aria-label="anchor" href="#exercises"></a>
 <a class="anchor" aria-label="anchor" href="#exercises"></a>
 </h2>
@@ -1518,8 +1528,9 @@ form at any time.</p>
 remote cluster, <a href="03-docker-for-cms-opendata.html#exercises">go
 back one page</a> and try the exercises using apptainer. The main goal
 of these exercises is to make sure you are able to execute important
-commands inside the containers and access stored files. If you need
-help, contact us in Mattermost.</p>
+commands inside the containers and access stored files. Recall that for
+the ROOT exercise, <code>start_vnc</code> and <code>stop_vnc</code>
+should not be necessary. If you need help, contact us in <a href="https://mattermost.web.cern.ch/cmsodws2024/channels/apptainer-help" class="external-link">Mattermost</a>.</p>
 </div>
 </div>
 </div>
